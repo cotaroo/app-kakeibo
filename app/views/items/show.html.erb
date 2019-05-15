@@ -1,17 +1,23 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Name:</strong>
+  <strong>項目:</strong>
   <%= @item.name %>
 </p>
 
 <p>
-  <strong>Start time:</strong>
-  <%= @item.start_time %>
+  <strong>日にち:</strong>
+  <%= @item.start_time.month %>
+  月
+  <%= @item.start_time.day %>
+  日
+  （
+  <%= %w{日 月 火 水 木 金 土}[@item.start_time.wday] %>
+  ）
 </p>
 
 <p>
-  <strong>Price:</strong>
+  <strong>値段:</strong>
   <%= @item.price %>
 </p>
 

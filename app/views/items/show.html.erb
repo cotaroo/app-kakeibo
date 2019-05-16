@@ -6,12 +6,17 @@
 </p>
 
 <p>
-  <strong>項目:</strong>
+  <strong>金額:</strong>
+  <%= @item.amount %>
+</p>
+
+<p>
+  <strong>カテゴリー:</strong>
   <%= @item.name %>
 </p>
 
 <p>
-  <strong>日にち:</strong>
+  <strong>日付:</strong>
   <%= @item.start_time.month %>
   月
   <%= @item.start_time.day %>
@@ -19,11 +24,6 @@
   （
   <%= %w{日 月 火 水 木 金 土}[@item.start_time.wday] %>
   ）
-</p>
-
-<p>
-  <strong>値段:</strong>
-  <%= @item.price %>
 </p>
 
 <%= link_to 'Edit', edit_item_path(@item) %> |

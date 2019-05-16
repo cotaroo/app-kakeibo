@@ -7,7 +7,7 @@
     <tr>
       <th>Name</th>
       <th>Start time</th>
-      <th>Price</th>
+      <th>Amount</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -17,7 +17,7 @@
       <tr>
         <td><%= item.name %></td>
         <td><%= item.start_time %></td>
-        <td><%= item.price %></td>
+        <td><%= item.amount %></td>
         <td><%= link_to 'Show', item %></td>
         <td><%= link_to 'Edit', edit_item_path(item) %></td>
         <td><%= link_to 'Destroy', item, method: :delete, data: { confirm: 'Are you sure?' } %></td>
@@ -30,9 +30,9 @@
 
 <% @items.each do |item| %>
   <% if item.income_and_expenditure == "支出" %>
-    <% @expenditure += item.price %>
+    <% @expenditure += item.amount %>
   <% else %>
-    <% @income += item.price %>
+    <% @income += item.amount %>
   <% end %>
 <% end%>
 
@@ -41,7 +41,7 @@
 <div>支出：<%= @expenditure %>円</div>
 <div>収入：<%= @income %>円</div>
 <div>合計：<%= @total %>円
-  <% if @total > 0 %>
+  <% if @total >= 0 %>
   😀
   <% else %>
   😰
@@ -62,7 +62,7 @@
       <% else %>
       +
       <% end %>
-      <%= item.price %>
+      <%= item.amount %>
       円
     </div>
   <% end %>

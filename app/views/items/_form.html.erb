@@ -12,23 +12,23 @@
   <% end %>
 
   <div class="field">
-    <%= form.label :income_and_expenditure %>
+    <div>収支</div>
     <%= form.select :income_and_expenditure,[["支出","支出"], ["収入","収入"]], {default: "支出"}, class: "select" %>
   </div>
 
   <div class="field">
-    <%= form.label :name %>
+    <div>金額</div>
+    <%= form.number_field :amount %>
+  </div>
+
+  <div class="field">
+    <div>カテゴリー</div>
     <%= form.text_field :name %>
   </div>
 
   <div class="field">
-    <%= form.label :start_time %>
+    <div>日付</div>
     <%= form.date_select :start_time %>
-  </div>
-
-  <div class="field">
-    <%= form.label :price %>
-    <%= form.number_field :price %>
   </div>
 
   <div class="actions">

@@ -12,6 +12,11 @@
   <% end %>
 
   <div class="field">
+    <%= form.label :income_and_expenditure %>
+    <%= form.select :income_and_expenditure,[["支出","支出"], ["収入","収入"]], {default: "支出"}, class: "select" %>
+  </div>
+
+  <div class="field">
     <%= form.label :name %>
     <%= form.text_field :name %>
   </div>

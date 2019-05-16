@@ -5,6 +5,9 @@ class ItemsController < ApplicationController
   # GET /items.json
   def index
     @items = Item.all
+    @income = 0
+    @expenditure = 0
+    @total = 0
   end
 
   # GET /items/1
@@ -69,6 +72,6 @@ class ItemsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def item_params
-      params.require(:item).permit(:name, :start_time, :price)
+      params.require(:item).permit(:name, :start_time, :price, :income_and_expenditure)
     end
 end

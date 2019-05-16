@@ -28,6 +28,28 @@
 
 <br>
 
+<% @items.each do |item| %>
+  <% if item.income_and_expenditure == "支出" %>
+    <% @expenditure += item.price %>
+  <% else %>
+    <% @income += item.price %>
+  <% end %>
+<% end%>
+
+<% @total = @income - @expenditure %>
+
+<div>支出：<%= @expenditure %>円</div>
+<div>収入：<%= @income %>円</div>
+<div>合計：<%= @total %>円
+  <% if @total > 0 %>
+  😀
+  <% else %>
+  😰
+  <% end %>
+</div>
+
+<br>
+
 <%= link_to 'New Item', new_item_path %>
 
 <%= month_calendar events: @items do |date, items| %>
@@ -35,7 +57,13 @@
 
   <% items.each do |item| %>
     <div>
-      <%= item.name %>
+      <% if item.income_and_expenditure == "支出" %>
+      -
+      <% else %>
+      +
+      <% end %>
+      <%= item.price %>
+      円
     </div>
   <% end %>
 <% end %>

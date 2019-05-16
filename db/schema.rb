@@ -16,6 +16,7 @@ ActiveRecord::Schema.define(version: 2019_05_15_052921) do
     t.string "name"
     t.datetime "start_time"
     t.integer "price"
+    t.string "income_and_expenditure"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

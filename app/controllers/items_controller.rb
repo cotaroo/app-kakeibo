@@ -54,6 +54,9 @@ class ItemsController < ApplicationController
     end
   end
 
+  def select
+  end
+
   # DELETE /items/1
   # DELETE /items/1.json
   def destroy

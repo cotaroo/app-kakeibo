@@ -1,5 +1,7 @@
 <div class="modal-dialog">
   <div class="modal-content">
+    <%= link_to "×", items_path %>
+    <br>
     <%= link_to "新規作成", new_item_path(start_time: @date) %>
     <% if @items.count > 0 %>
       <% @items.each do |item| %>

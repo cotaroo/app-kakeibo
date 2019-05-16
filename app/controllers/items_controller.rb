@@ -5,16 +5,19 @@ class ItemsController < ApplicationController
   # GET /items.json
   def index
     @items = Item.all
+    @income = 0
+    @expenditure = 0
+    @total = 0
   end
 
   # GET /items/1
   # GET /items/1.json
-  def show
-  end
+  # def show
+  # end
 
   # GET /items/new
   def new
-    @item = Item.new
+    @item = Item.new(start_time: params[:start_time])
   end
 
   # GET /items/1/edit
@@ -28,8 +31,8 @@ class ItemsController < ApplicationController
 
     respond_to do |format|
       if @item.save
-        format.html { redirect_to @item, notice: 'Item was successfully created.' }
-        format.json { render :show, status: :created, location: @item }
+        format.html { redirect_to items_path, notice: 'Item was successfully created.' }
+        # format.json { render :show, status: :created, location: @item }
       else
         format.html { render :new }
         format.json { render json: @item.errors, status: :unprocessable_entity }
@@ -43,12 +46,17 @@ class ItemsController < ApplicationController
     respond_to do |format|
       if @item.update(item_params)
         format.html { redirect_to @item, notice: 'Item was successfully updated.' }
-        format.json { render :show, status: :ok, location: @item }
+        # format.json { render :show, status: :ok, location: @item }
       else
         format.html { render :edit }
         format.json { render json: @item.errors, status: :unprocessable_entity }
       end
     end
+  end
+
+  def select
+    @date = params[:start_time]
+    @items = Item.where(start_time: params[:start_time])
   end
 
   # DELETE /items/1
@@ -69,6 +77,6 @@ class ItemsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def item_params
-      params.require(:item).permit(:name, :start_time, :price)
+      params.require(:item).permit(:name, :start_time, :amount, :income_and_expenditure)
     end
 end

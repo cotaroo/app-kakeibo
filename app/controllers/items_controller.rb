@@ -17,7 +17,7 @@ class ItemsController < ApplicationController
 
   # GET /items/new
   def new
-    @item = Item.new
+    @item = Item.new(start_time: params[:start_time])
   end
 
   # GET /items/1/edit

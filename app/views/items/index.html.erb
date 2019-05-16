@@ -53,7 +53,7 @@
 <%= link_to 'New Item', new_item_path %>
 
 <%= month_calendar events: @items do |date, items| %>
-  <%= date %>
+  <%= link_to date, new_item_path(start_time: date) %>
 
   <% items.each do |item| %>
     <div>

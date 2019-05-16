@@ -12,8 +12,8 @@ class ItemsController < ApplicationController
 
   # GET /items/1
   # GET /items/1.json
-  def show
-  end
+  # def show
+  # end
 
   # GET /items/new
   def new
@@ -31,8 +31,8 @@ class ItemsController < ApplicationController
 
     respond_to do |format|
       if @item.save
-        format.html { redirect_to @item, notice: 'Item was successfully created.' }
-        format.json { render :show, status: :created, location: @item }
+        format.html { redirect_to items_path, notice: 'Item was successfully created.' }
+        # format.json { render :show, status: :created, location: @item }
       else
         format.html { render :new }
         format.json { render json: @item.errors, status: :unprocessable_entity }
@@ -46,7 +46,7 @@ class ItemsController < ApplicationController
     respond_to do |format|
       if @item.update(item_params)
         format.html { redirect_to @item, notice: 'Item was successfully updated.' }
-        format.json { render :show, status: :ok, location: @item }
+        # format.json { render :show, status: :ok, location: @item }
       else
         format.html { render :edit }
         format.json { render json: @item.errors, status: :unprocessable_entity }
@@ -56,6 +56,7 @@ class ItemsController < ApplicationController
 
   def select
     @date = params[:start_time]
+    @items = Item.where(start_time: params[:start_time])
   end
 
   # DELETE /items/1

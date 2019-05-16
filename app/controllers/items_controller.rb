@@ -55,6 +55,7 @@ class ItemsController < ApplicationController
   end
 
   def select
+    @date = params[:start_time]
   end
 
   # DELETE /items/1

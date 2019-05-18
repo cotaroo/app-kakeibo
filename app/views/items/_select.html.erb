@@ -1,12 +1,16 @@
 <div class="modal-dialog">
-  <div class="modal-content">
-    <%= link_to "×", items_path %>
-    <br>
-    <%= link_to "新規作成", new_item_path(start_time: @date) %>
-    <% if @items.count > 0 %>
-      <% @items.each do |item| %>
-        <%= link_to item.amount, edit_item_path(item) %>
+  <div class="modal-content" role="document">
+    <div div class="modal-header">
+      <h3 class="modal-title">選択する</h3>
+      <%= link_to "×", items_path %>
+    </div>
+    <div div class="modal-body">
+      <%= link_to "新規作成", new_item_path(start_time: @date) %>
+      <% if @items.count > 0 %>
+        <% @items.each do |item| %>
+          <%= link_to item.amount, edit_item_path(item) %>
+        <% end %>
       <% end %>
-    <% end %>
+    </div>
   </div>
 </div>

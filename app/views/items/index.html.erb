@@ -27,7 +27,7 @@
 <br>
 
 <%= month_calendar events: @items do |date, items| %>
-  <%= link_to date, items_select_path(start_time: date), remote: true %>
+  <%= link_to date.day, items_select_path(start_time: date), remote: true %>
   <div id="item-modal" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true"></div>
 
   <% items.each do |item| %>

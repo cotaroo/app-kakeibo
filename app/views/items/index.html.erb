@@ -5,9 +5,9 @@
 <br>
 
 <% @items.each do |item| %>
-  <% if item.income_and_expenditure == "支出" %>
+  <% if item.income_and_expenditure == "支出" && item.start_time.month == @this_date.month %>
     <% @expenditure += item.amount %>
-  <% else %>
+  <% elsif item.income_and_expenditure == "収入" && item.start_time.month == @this_date.month %>
     <% @income += item.amount %>
   <% end %>
 <% end%>

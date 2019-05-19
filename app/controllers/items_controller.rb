@@ -5,6 +5,11 @@ class ItemsController < ApplicationController
   # GET /items.json
   def index
     @items = Item.all
+    if params[:start_date].blank?
+      @this_date = Date.today
+    else
+      @this_date = Date.parse(params[:start_date])
+    end
     @income = 0
     @expenditure = 0
     @total = 0

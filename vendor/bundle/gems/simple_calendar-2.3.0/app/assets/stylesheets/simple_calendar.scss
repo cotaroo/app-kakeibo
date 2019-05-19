@@ -47,6 +47,7 @@
 
   .day {
     height: 80px;
+    font-size: 30px;
   }
 
   .wday-0 {}
@@ -78,5 +79,18 @@
 
   .calendar-title{
     font-size: 40px;
+  }
+
+  .amount{
+    font-size: 15px;
+    padding-top: 10px;
+  }
+
+  .expenditure{
+    color: red;
+  }
+
+  .income{
+    color: blue;
   }
 }

@@ -14,9 +14,9 @@
 
 <% @total = @income - @expenditure %>
 
-<div>支出：<%= @expenditure %>円</div>
-<div>収入：<%= @income %>円</div>
-<div>合計：<%= @total %>円
+<div><%= "支出：#{@expenditure}" %>円</div>
+<div><%= "収入：#{@income}" %>円</div>
+<div><%= "合計：#{@total}" %>円
   <% if @total >= 0 %>
   😀
   <% else %>
@@ -27,18 +27,28 @@
 <br>
 
 <%= month_calendar events: @items do |date, items| %>
+  <% @expenditure = 0 %>
+  <% @income = 0 %>
   <%= link_to date.day, items_select_path(start_time: date), remote: true %>
   <div id="item-modal" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true"></div>
 
   <% items.each do |item| %>
-    <div>
-      <% if item.income_and_expenditure == "支出" %>
-      -
-      <% else %>
-      +
-      <% end %>
-      <%= item.amount %>
-      円
-    </div>
+    <% if item.income_and_expenditure == "支出" %>
+      <% @expenditure += item.amount %>
+    <% else %>
+      <% @income += item.amount %>
+    <% end %>
   <% end %>
+  <div class = "amount">
+    <div class = "expenditure">
+      <% if @expenditure > 0 %>
+        <%= "-#{@expenditure}円" %>
+      <% end %>
+    </div>
+    <div class = "income">
+      <% if @income > 0 %>
+        <%= "＋#{@income}円" %>
+      <% end %>
+    </div>
+  </div>
 <% end %>

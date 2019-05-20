@@ -1,3 +1,67 @@
 // Place all the styles related to the Items controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.header{
+    height: 70px;
+}
+
+.header-calendar{
+    float: left;
+    font-size: 20px;
+    margin: 30px ;
+}
+
+.header-new{
+	float: right;
+	font-size: 20px;
+  margin: 20px;
+}
+
+.btn-cross {
+  display: inline-block;
+  position: relative;
+  padding: 0.25em 1em;
+  border-top: solid 2px rgb(242, 143, 29);
+  border-bottom: solid 2px rgb(242, 143, 29);
+  text-decoration: none;
+  font-weight: bold;
+}
+.btn-cross:before, .btn-cross:after {
+  content: '';
+  position: absolute;
+  top: -7px;
+  width: 2px;
+  height: -webkit-calc(100% + 14px);
+  height: calc(100% + 14px);
+  background-color: rgb(242, 143, 29);
+  transition: .3s;
+}
+.btn-cross:before {
+  left: 7px;
+}
+.btn-cross:after {
+  right: 7px;
+}
+.btn-cross:hover:before {
+  top: 0px;
+  left:0;
+  height: 100%;
+}
+.btn-cross:hover:after {
+  top: 0px;
+  right: 0;
+  height: 100%;
+}
+
+.info {
+	text-align: center;
+}
+
+.info-expenditure-and-income {
+	font-size: 30px;
+}
+
+.info-total {
+	font-size: 40px;
+}

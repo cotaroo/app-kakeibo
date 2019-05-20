@@ -1,7 +1,5 @@
 <p id="notice"><%= notice %></p>
 
-<h1>家計簿</h1>
-
 <br>
 
 <% @items.each do |item| %>
@@ -14,14 +12,19 @@
 
 <% @total = @income - @expenditure %>
 
-<div><%= "支出：#{@expenditure}" %>円</div>
-<div><%= "収入：#{@income}" %>円</div>
-<div><%= "合計：#{@total}" %>円
-  <% if @total >= 0 %>
-  😀
-  <% else %>
-  😰
-  <% end %>
+<div class="info">
+  <div class="info-expenditure-and-income">
+    <%= "支出  #{@expenditure}円" %>&nbsp;
+    <%= "収入  #{@income}円" %>
+  </div>
+  <div class="info-total">
+    <%= "合計  #{@total}円" %>
+    <% if @total >= 0 %>
+    💵
+    <% else %>
+    💸
+    <% end %>
+  </div>
 </div>
 
 <br>
@@ -47,7 +50,7 @@
     </div>
     <div class = "income">
       <% if @income > 0 %>
-        <%= "＋#{@income}円" %>
+        <%= "+#{@income}円" %>
       <% end %>
     </div>
   </div>

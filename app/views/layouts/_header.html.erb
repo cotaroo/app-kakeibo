@@ -1,0 +1,16 @@
+<div class = "header">
+	<div class="header-calendar">
+		<% if request.path == items_path || request.path == "/"%>
+			<%= link_to "💰カレンダー", items_path, class:"btn-cross" %>
+		<% else %>
+			<%= link_to "カレンダー", items_path, class:"btn-cross" %>
+		<% end %>
+	</div>
+	<div class="header-new">
+		<% if request.path == new_item_path%>
+		<%= link_to "💰新規作成", new_item_path, class:"btn-cross" %>
+		<% else%>
+			<%= link_to "新規作成", new_item_path, class:"btn-cross" %>
+		<% end %>
+	</div>
+</div>

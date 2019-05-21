@@ -101,6 +101,24 @@ div {
   outline: 0;
 }
 
+.form_box {
+  font: 15px/24px sans-serif;
+	box-sizing: border-box;
+	// width: 100%;
+	padding: 0.3em;
+	transition: 0.3s;
+	letter-spacing: 1px;
+	color: #aaaaaa;
+	border: 1px solid gray;
+	border-radius: 4px;
+}
+
+.form_box:focus {
+	border: 1px solid #da3c41;
+	outline: none;
+	box-shadow: 0 0 5px 1px rgba(242, 143, 29, .5);
+}
+
 #notice {
   color: green;
 }

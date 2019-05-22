@@ -108,7 +108,7 @@ div {
 	padding: 0.3em;
 	transition: 0.3s;
 	letter-spacing: 1px;
-	color: #aaaaaa;
+	// color: #aaaaaa;
 	border: 1px solid gray;
 	border-radius: 4px;
 }
@@ -125,11 +125,15 @@ div {
 
 .field_with_errors {
   padding: 2px;
+  text-align:center;
   background-color: red;
-  display: table;
+  width: 13%;
+  margin-left: 43.5%;
+  // display: table;
 }
 
 #error_explanation {
+  margin-left: 35%;
   width: 450px;
   border: 2px solid red;
   padding: 7px 7px 0;

@@ -1,0 +1,17 @@
+<div class="modal-dialog">
+  <div class="modal-content" role="document">
+	<% @items.each do |item| %>
+		<% if item.start_time.month == $this_date.month %>
+			<% if item.name == "給料"%>
+				<% @kyuryo += item.amount %>
+			<% elsif item.name == "その他"%>
+				<% @sonota += item.amount %>
+			<% end %>
+		<% end %>
+	<% end %>
+		<ul>
+		<li><%= "給料　#{@kyuryo}円"%></li>
+		<li><%= "その他　#{@sonota}円"%></li>
+		</ul>
+  </div>
+</div>

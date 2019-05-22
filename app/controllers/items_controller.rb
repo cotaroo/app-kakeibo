@@ -3,15 +3,16 @@ class ItemsController < ApplicationController
 
 
   $error_flag = 0
+  $this_date = Date.today
 
   # GET /items
   # GET /items.json
   def index
     @items = Item.all
     if params[:start_date].blank?
-      @this_date = Date.today
+      $this_date = Date.today
     else
-      @this_date = Date.parse(params[:start_date])
+      $this_date = Date.parse(params[:start_date])
     end
     @income = 0
     @expenditure = 0
@@ -68,6 +69,24 @@ class ItemsController < ApplicationController
   def select
     @date = params[:start_time]
     @items = Item.where(start_time: params[:start_time])
+  end
+
+  def expenditure
+    @items = Item.where(income_and_expenditure: "支出")
+    @shokuhi = 0
+    @gaishokuhi = 0
+    @nichiyohin = 0
+    @kotsuhi = 0
+    @ihuku = 0
+    @kosaihi = 0
+    @shumi = 0
+    @sonota = 0
+  end
+
+  def income
+    @items = Item.where(income_and_expenditure: "収入")
+    @kyuryo = 0
+    @sonota = 0
   end
 
   # DELETE /items/1

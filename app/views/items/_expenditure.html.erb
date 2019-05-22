@@ -1,0 +1,35 @@
+<div class="modal-dialog">
+  <div class="modal-content" role="document">
+	<% @items.each do |item| %>
+		<% if item.start_time.month == $this_date.month %>
+			<% if item.name = "食費"%>
+				<% @shokuhi += item.amount %>
+			<% elsif item.name = "外食費"%>
+				<% @gaishokuhi += item.amount %>
+			<% elsif item.name = "日用品"%>
+				<% @nichiyohin += item.amount %>
+			<% elsif item.name = "交通費"%>
+				<% @kotsuhi += item.amount %>
+			<% elsif item.name = "衣服"%>
+				<% @ihuku += item.amount %>
+			<% elsif item.name = "交際費"%>
+				<% @kosaihi += item.amount %>
+			<% elsif item.name = "趣味"%>
+				<% @shumi += item.amount %>
+			<% elsif item.name = "その他"%>
+				<% @sonota += item.amount %>
+			<% end %>
+		<% end %>
+	<% end %>
+		<ul>
+		<li><%= "食費　#{@shokuhi}円"%></li>
+		<li><%= "外食費　#{@gaishokuhi}円"%></li>
+		<li><%= "日用品　#{@nichiyohin}円"%></li>
+		<li><%= "交通費　#{@kotsuhi}円"%></li>
+		<li><%= "衣服　#{@ihuku}円"%></li>
+		<li><%= "交際費　#{@kosaihi}円"%></li>
+		<li><%= "趣味　#{@shumi}円"%></li>
+		<li><%= "その他　#{@sonota}円"%></li>
+		</ul>
+  </div>
+</div>

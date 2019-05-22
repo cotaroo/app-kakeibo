@@ -3,9 +3,9 @@
 <br>
 
 <% @items.each do |item| %>
-  <% if item.income_and_expenditure == "支出" && item.start_time.month == @this_date.month %>
+  <% if item.income_and_expenditure == "支出" && item.start_time.month == $this_date.month %>
     <% @expenditure += item.amount %>
-  <% elsif item.income_and_expenditure == "収入" && item.start_time.month == @this_date.month %>
+  <% elsif item.income_and_expenditure == "収入" && item.start_time.month == $this_date.month %>
     <% @income += item.amount %>
   <% end %>
 <% end%>
@@ -14,7 +14,8 @@
 
 <div class="info">
   <div class="info-expenditure-and-income">
-    <%= "支出  #{@expenditure}円" %>&nbsp;&nbsp;
+    <%= link_to "支出  #{@expenditure}円", items_expenditure_path, remote: true %>&nbsp;&nbsp;
+    <div id="expenditure-modal" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true"></div>
     <%= "収入  #{@income}円" %>
   </div>
   <div class="info-total">

@@ -15,7 +15,15 @@
 .header-new{
 	float: right;
 	font-size: 20px;
-  margin: 20px;
+  margin: 30px;
+}
+
+.kakeibo{
+  font-size: 20px;
+  position: absolute;
+  top: 30px;
+  left: 43%;
+  font-family: 'M PLUS Rounded 1c', sans-serif;
 }
 
 .btn-cross {
@@ -59,11 +67,12 @@
 }
 
 .info-expenditure-and-income {
-	font-size: 30px;
+  font-size: 30px;
 }
 
 .info-total {
-	font-size: 40px;
+  font-size: 30px;
+  margin-top: 20px;
 }
 
 .destroy{

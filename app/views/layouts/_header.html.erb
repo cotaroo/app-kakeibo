@@ -1,13 +1,16 @@
 <div class = "header">
 	<div class="header-calendar">
-		<% if request.path == items_path || request.path == "/"%>
+		<% if request.path == items_path && $error_flag == 0 || request.path == "/"%>
 			<%= link_to "💰カレンダー", items_path, class:"btn-cross" %>
 		<% else %>
 			<%= link_to "カレンダー", items_path, class:"btn-cross" %>
 		<% end %>
 	</div>
+	<div class="kakeibo">
+		🏠 KakeiboApp
+	</div>
 	<div class="header-new">
-		<% if request.path == new_item_path%>
+		<% if request.path == new_item_path || $error_flag == 1%>
 		<%= link_to "💰新規作成", new_item_path, class:"btn-cross" %>
 		<% else%>
 			<%= link_to "新規作成", new_item_path, class:"btn-cross" %>

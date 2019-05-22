@@ -1,7 +1,7 @@
-<h1>編集</h1>
+<h1>編集/削除</h1>
 
 <%= render 'form', item: @item %>
 
-<div>
-<%= link_to 'Destroy', @item, method: :delete, data: { confirm: 'Are you sure?' } %>
+<div class ="destroy">
+or <%= link_to 'Destroy', @item, method: :delete, data: { confirm: 'Are you sure?' } %> ?
 </div>

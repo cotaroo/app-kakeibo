@@ -83,6 +83,7 @@ class ItemsController < ApplicationController
     @sonota = 0
   end
 
+  
   def income
     @items = Item.where(income_and_expenditure: "収入")
     @kyuryo = 0

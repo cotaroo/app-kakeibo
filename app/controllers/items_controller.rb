@@ -83,12 +83,16 @@ class ItemsController < ApplicationController
     @sonota = 0
   end
 
+<<<<<<< HEAD
   
   def income
     @items = Item.where(income_and_expenditure: "収入")
     @kyuryo = 0
     @sonota = 0
   end
+=======
+
+>>>>>>> 756a2256f6e9adabee50273a0fba4fe8b3534c36
 
   # DELETE /items/1
   # DELETE /items/1.json

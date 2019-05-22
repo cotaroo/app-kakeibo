@@ -16,6 +16,8 @@
   <div class="info-expenditure-and-income">
     <%= link_to "支出  #{@expenditure}円", items_expenditure_path, remote: true %>&nbsp;&nbsp;
     <div id="expenditure-modal" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true"></div>
+    <%= link_to "収入  #{@income}円", items_income_path, remote: true %>&nbsp;&nbsp;
+    <div id="income-modal" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true"></div>
 
   </div>
   <div class="info-total">

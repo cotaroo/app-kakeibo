@@ -2,7 +2,21 @@
   <div class="modal-content" role="document">
 	<% @items.each do |item| %>
 		<% if item.start_time.month == $this_date.month %>
-
+				<% if item.name == "食費"%>
+				<% @shokuhi += item.amount %>
+			<% elsif item.name == "外食費"%>
+				<% @gaishokuhi += item.amount %>
+			<% elsif item.name == "日用品"%>
+				<% @nichiyohin += item.amount %>
+			<% elsif item.name == "交通費"%>
+				<% @kotsuhi += item.amount %>
+			<% elsif item.name == "衣服"%>
+				<% @ihuku += item.amount %>
+			<% elsif item.name == "交際費"%>
+				<% @kosaihi += item.amount %>
+			<% elsif item.name == "趣味"%>
+				<% @shumi += item.amount %>
+			<% elsif item.name == "その他"%>
 				<% @sonota += item.amount %>
 			<% end %>
 		<% end %>

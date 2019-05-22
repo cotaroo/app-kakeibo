@@ -83,6 +83,8 @@ class ItemsController < ApplicationController
     @sonota = 0
   end
 
+
+
   # DELETE /items/1
   # DELETE /items/1.json
   def destroy
